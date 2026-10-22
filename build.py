@@ -29,6 +29,13 @@ DATA=[
    "\u201cI've been working on getting an Omarchy aarch64 Dragon build up on the Surface Laptop 7 (13.8\", Snapdragon X Plus X1P-64-100). What works - Face unlock (lock screen + sudo) with the built-in IR camera and emitter\u2026\u201d"),
    ("Omarchy Dragon announcement (context), DHH on X","https://x.com/dhh/status/2100833589042491769",
    "\u201cOmarchy Dragon is our new official team for working on making Omarchy run beautifully on @Qualcomm Snapdragon computers\u201d")]),
+ dict(slug="macbook-pro-2015",name="Apple MacBook Pro (2015, Intel)",distro="Omarchy",overall="Works",
+  wifi=U,suspend=U,camera=U,audio=U,display=U,battery=U,
+  summary="Two owners on X say Omarchy runs well on a 2015 Intel MacBook Pro. Neither says which components they checked, so every item below is still unknown. One report is the 13-inch model; the other doesn't say the screen size.",
+  reports=[("Marian Gabriel (@vladmariang) on X, 2026-10-08","https://x.com/vladmariang/status/2108285563728240957",
+   "\u201cAlso on Macbook Pro 13\" 2015 works like I bought the laptop yesterday.....\u201d (reply to DHH; same post also says Omarchy installed straight away on an HP Omen, model not specified)"),
+   ("Bj\u00f6rn (@teddybear_lost) on X, 2026-10-07","https://x.com/teddybear_lost/status/2107891169464074290",
+   "\u201cI installed omarchy on my MacBook Pro from 2015 and it works great \U0001f642\U0001f44d\u201d (screen size not stated)")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
