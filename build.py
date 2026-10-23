@@ -36,6 +36,11 @@ DATA=[
    "\u201cAlso on Macbook Pro 13\" 2015 works like I bought the laptop yesterday.....\u201d (reply to DHH; same post also says Omarchy installed straight away on an HP Omen, model not specified)"),
    ("Bj\u00f6rn (@teddybear_lost) on X, 2026-10-07","https://x.com/teddybear_lost/status/2107891169464074290",
    "\u201cI installed omarchy on my MacBook Pro from 2015 and it works great \U0001f642\U0001f44d\u201d (screen size not stated)")]),
+ dict(slug="asus-rog-strix-g15-g512lv",name="ASUS ROG Strix G15 (G512LV)",distro="Omarchy",overall="Works (minor fix)",
+  wifi=U,suspend=U,camera=U,audio=U,display=U,battery=U,
+  summary="One owner installed Omarchy on this older ASUS gaming laptop in about seven minutes and says everything worked smoothly. The only issue they mention was loud fans, which they quieted by switching the power profile to quiet. They don't say which components they checked, so each item below is still unknown, including how the discrete NVIDIA GPU behaves.",
+  reports=[("Aurelien Navarre (@anavarre) on X, 2026-10-16","https://x.com/anavarre/status/2111194211601272999",
+   "\u201cInstalled Omarchy on an old ASUS ROG Strix G15 (G512LV) gaming laptop tonight. Took 7 minutes. Fan got a little crazy, which I fixed with: powerprofilesctl set quiet. Apart from that everything worked smoothly \U0001f44c\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
