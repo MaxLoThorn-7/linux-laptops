@@ -41,6 +41,11 @@ DATA=[
   summary="One owner installed Omarchy on this older ASUS gaming laptop in about seven minutes and says everything worked smoothly. The only issue they mention was loud fans, which they quieted by switching the power profile to quiet. They don't say which components they checked, so each item below is still unknown, including how the discrete NVIDIA GPU behaves.",
   reports=[("Aurelien Navarre (@anavarre) on X, 2026-10-16","https://x.com/anavarre/status/2111194211601272999",
    "\u201cInstalled Omarchy on an old ASUS ROG Strix G15 (G512LV) gaming laptop tonight. Took 7 minutes. Fan got a little crazy, which I fixed with: powerprofilesctl set quiet. Apart from that everything worked smoothly \U0001f44c\u201d")]),
+ dict(slug="lenovo-thinkpad-t14s-gen-3",name="Lenovo ThinkPad T14s Gen 3",distro="Omarchy",overall="Works",
+  wifi=U,suspend=U,camera=U,audio=U,display=U,battery=U,
+  summary="One owner on X says Omarchy runs very fast on a ThinkPad T14s Gen 3, and notes the laptop can be bought used for a couple of hundred pounds. They don't say whether theirs is the Intel or AMD version, or which components they checked, so every item below is still unknown.",
+  reports=[("Frank Cheung (@fcuk112) on X, 2026-10-20","https://x.com/fcuk112/status/2112690323398791443",
+   "\u201c@omarchy is a joy to play around with - i got it running on a thinkpad T14s gen 3 (which can be had for a couple of hundred \u00a3) and it absolutely flies!\u201d (excerpt; post continues)")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
