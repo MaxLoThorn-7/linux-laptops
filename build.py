@@ -8,10 +8,12 @@ DATA=[
   reports=[("Antonio Cangiano on X, 2026-10-16","https://x.com/acangiano/status/2111320896468406312",
    "\u201cThe Lenovo X9-15p is likely the nicest laptop I've ever had. Omarchy works out of the box, except for the camera, which the agent fixed in two minutes.\u201d")]),
  dict(slug="framework-13-amd",name="Framework Laptop 13 (AMD)",distro="Omarchy",overall="Works",
-  wifi=U,suspend=U,camera=U,audio=U,display=U,battery=U,
-  summary="One owner reports it works great, with only personal-preference configuration needed.",
+  wifi=U,suspend=U,camera=U,audio=U,display=U,battery="Owner reports ~6h (Ryzen 5 7640U, older battery)",
+  summary="Two owners report it works well. One says only personal-preference configuration was needed; another, on a Ryzen 5 7640U model with an older battery, reports about six hours of battery life on Omarchy.",
   reports=[("r/omarchy comment, 2026-02-06","https://www.reddit.com/r/omarchy/comments/1qxj4fo/linux_laptop_omarchy_suggestions/",
-   "\u201cI have a framework 13 amd and it works great, only configuration I needed was personal preference. everything else worked out of the box.\u201d")]),
+   "\u201cI have a framework 13 amd and it works great, only configuration I needed was personal preference. everything else worked out of the box.\u201d"),
+   ("Cynthia Toporowski (@ItsCynnamoroll) on X, 2026-10-24","https://x.com/ItsCynnamoroll/status/2113832857722642495",
+   "\u201cI don't know what I was expecting when I installed @omarchy earlier today\u2026 Nope. No BS. Framework 13 7640u old battery, 6h battery life\u201d (excerpt)")]),
  dict(slug="dell-xps-14-panther-lake",name="Dell XPS 14 (Panther Lake)",distro="Omarchy 3.6",overall="Works",
   wifi=U,suspend=U,camera=U,audio=U,display="Works (incl. Studio Display, per post title)",battery="Owner says good",
   summary="An owner installed Omarchy 3.6 and reports it working well, including good battery and performance.",
@@ -46,6 +48,11 @@ DATA=[
   summary="One owner on X says Omarchy runs very fast on a ThinkPad T14s Gen 3, and notes the laptop can be bought used for a couple of hundred pounds. They don't say whether theirs is the Intel or AMD version, or which components they checked, so every item below is still unknown.",
   reports=[("Frank Cheung (@fcuk112) on X, 2026-10-20","https://x.com/fcuk112/status/2112690323398791443",
    "\u201c@omarchy is a joy to play around with - i got it running on a thinkpad T14s gen 3 (which can be had for a couple of hundred \u00a3) and it absolutely flies!\u201d (excerpt; post continues)")]),
+ dict(slug="lenovo-thinkpad-t14-gen-2-intel",name="Lenovo ThinkPad T14 Gen 2 (Intel)",distro="Omarchy",overall="Works",
+  wifi=U,suspend=U,camera=U,audio=U,display=U,battery=U,
+  summary="One owner on X says Omarchy made their Intel ThinkPad T14 Gen 2 a \u201cdream laptop\u201d and calls these machines great little workhorses. Their only complaint is that the screen is hard to see in bright outdoor light, which is about the panel itself rather than Linux support. They don't say which components they checked, so every item below is still unknown.",
+  reports=[("Nick (@maietta) on X, 2026-10-24","https://x.com/maietta/status/2114089169165455740",
+   "\u201cI'm running a Second Gen Intel version of the T14. Omarchy made this a dream laptop. The only thing I wish now is ability to see the screen when it's bright out. Other than that these are great little workhorses.\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
