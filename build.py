@@ -70,7 +70,7 @@ def page(title,body,depth=0):
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} · Linux laptops, verified by owners</title><meta name="description" content="Owner-reported Linux and Omarchy laptop compatibility, with sources."><link rel="stylesheet" href="{p}style.css"></head><body>
 <header><h1><a href="{p}index.html">Linux laptops, verified by owners</a></h1><nav><a href="{p}index.html">Table</a> · <a href="{p}about.html">About &amp; method</a> · <a href="{p}submit.html">Submit a report</a></nav></header>
-<main>{body}</main><footer>Every claim links to a public owner report. “unknown” means no report found yet, not “broken”.</footer></body></html>"""
+<main>{body}</main><footer>Every claim links to a public owner report. “unknown” means no report found yet, not “broken”.</footer><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "a672c8bbb0704c30b4d89dbf8ba579fe"}}'></script></body></html>"""
 os.makedirs("laptops",exist_ok=True)
 open("style.css","w").write(CSS)
 rows=""
