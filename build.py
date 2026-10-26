@@ -53,6 +53,11 @@ DATA=[
   summary="One owner on X says Omarchy made their Intel ThinkPad T14 Gen 2 a \u201cdream laptop\u201d and calls these machines great little workhorses. Their only complaint is that the screen is hard to see in bright outdoor light, which is about the panel itself rather than Linux support. They don't say which components they checked, so every item below is still unknown.",
   reports=[("Nick (@maietta) on X, 2026-10-24","https://x.com/maietta/status/2114089169165455740",
    "\u201cI'm running a Second Gen Intel version of the T14. Omarchy made this a dream laptop. The only thing I wish now is ability to see the screen when it's bright out. Other than that these are great little workhorses.\u201d")]),
+ dict(slug="asus-expertbook-b9",name="ASUS ExpertBook B9 (generation not stated)",distro="Omarchy",overall="Works",
+  wifi=U,suspend=U,camera=U,audio=U,display=U,battery=U,
+  summary="One owner on X says their ASUS B9, a laptop they had written off and handed to their kids, is still good to use once it runs Omarchy. They call it \u201cAsus B9\u201d without naming the generation (the B9 line is sold as the ExpertBook B9), and they don't say which components they checked, so every item below is still unknown.",
+  reports=[("Dmytro Gladkyi (@gladimdim) on X, 2026-10-24","https://x.com/gladimdim/status/2113969530917539963",
+   "\u201cMy Asus B9 laptop was sentenced and given to kids to jump on it. Turns out it is still good if Omarchy is running it. Omarchy is truly a miracle\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
