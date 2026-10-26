@@ -72,7 +72,7 @@ def cls(v): return "u" if v==U else ("ok" if v.startswith("Works") else "warn")
 def cell(v): return f'<span class="{cls(v)}">{html.escape(v)}</span>'
 def page(title,body,depth=0):
     p="../"*depth
-    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="google-site-verification" content="TjpcVWFtCRT0HTAodlyFz_t3EosdQ0vKlujXUvH4IUM" /><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} · Linux laptops, verified by owners</title><meta name="description" content="Owner-reported Linux and Omarchy laptop compatibility, with sources."><link rel="stylesheet" href="{p}style.css"></head><body>
 <header><h1><a href="{p}index.html">Linux laptops, verified by owners</a></h1><nav><a href="{p}index.html">Table</a> · <a href="{p}about.html">About &amp; method</a> · <a href="{p}submit.html">Submit a report</a></nav></header>
 <main>{body}</main><footer>Every claim links to a public owner report. “unknown” means no report found yet, not “broken”.</footer><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "a672c8bbb0704c30b4d89dbf8ba579fe"}}'></script></body></html>"""
@@ -112,3 +112,8 @@ submit="""<h2>Submit your report</h2><p>Own a laptop running Omarchy or another 
 <p>We only publish what you report. Anything you don't mention stays “unknown”.</p>"""
 open("submit.html","w").write(page("Submit a report",submit))
 print("built",len(DATA))
+
+# sitemap
+BASE="https://maxlothorn-7.github.io/linux-laptops/"
+urls=["", "about.html", "submit.html"]+[f"laptops/{d['slug']}.html" for d in DATA]
+open("sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"<url><loc>{BASE}{u}</loc></url>\n" for u in urls)+"</urlset>\n")
