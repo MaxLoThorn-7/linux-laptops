@@ -58,6 +58,11 @@ DATA=[
   summary="One owner on X says their ASUS B9, a laptop they had written off and handed to their kids, is still good to use once it runs Omarchy. They call it \u201cAsus B9\u201d without naming the generation (the B9 line is sold as the ExpertBook B9), and they don't say which components they checked, so every item below is still unknown.",
   reports=[("Dmytro Gladkyi (@gladimdim) on X, 2026-10-24","https://x.com/gladimdim/status/2113969530917539963",
    "\u201cMy Asus B9 laptop was sentenced and given to kids to jump on it. Turns out it is still good if Omarchy is running it. Omarchy is truly a miracle\u201d")]),
+ dict(slug="lenovo-thinkpad-t490s",name="Lenovo ThinkPad T490s",distro="Omarchy",overall="Works",
+  wifi=U,suspend=U,camera=U,audio=U,display=U,battery=U,
+  summary="One owner on X says Omarchy runs great on their ThinkPad T490s (Core i7-8665U, 32GB RAM, 512GB NVMe SSD), which they bought used for $150. They note the battery was at 90% health, which describes the battery's wear rather than battery life under Linux. They find the build feels worse than a MacBook and point out it isn't modular, but like that it's slim. They don't say which components they checked, so every item below is still unknown.",
+  reports=[("Alejandro (@doomcheeks666) on X, 2026-10-26","https://x.com/doomcheeks666/status/2114819445843771736",
+   "\u201cThinkPad T490s / i7 8665u @ 4.8 GHz / 512 ssd nvme / 32gb drr4 ram. Got this for $150! It\u2019s like new, the ssd health is 100%, the battery is at 90% health. The feel is kinda ass compared to macbook, but the specs are nice. It is not modular, but it is slim! Omarchy runs great on it \U0001f60e\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
