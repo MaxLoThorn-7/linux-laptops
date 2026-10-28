@@ -63,6 +63,11 @@ DATA=[
   summary="One owner on X says Omarchy runs great on their ThinkPad T490s (Core i7-8665U, 32GB RAM, 512GB NVMe SSD), which they bought used for $150. They note the battery was at 90% health, which describes the battery's wear rather than battery life under Linux. They find the build feels worse than a MacBook and point out it isn't modular, but like that it's slim. They don't say which components they checked, so every item below is still unknown.",
   reports=[("Alejandro (@doomcheeks666) on X, 2026-10-26","https://x.com/doomcheeks666/status/2114819445843771736",
    "\u201cThinkPad T490s / i7 8665u @ 4.8 GHz / 512 ssd nvme / 32gb drr4 ram. Got this for $150! It\u2019s like new, the ssd health is 100%, the battery is at 90% health. The feel is kinda ass compared to macbook, but the specs are nice. It is not modular, but it is slim! Omarchy runs great on it \U0001f60e\u201d")]),
+dict(slug="surface-laptop-1st-gen",name="Microsoft Surface Laptop (1st Gen)",distro="Omarchy",overall="Works",
+  wifi=U,suspend=U,camera=U,audio=U,display=U,battery=U,
+  summary="One owner on X says they're still using their first-generation Surface Laptop and that it now runs Omarchy, because the machine doesn't support Windows 11. They don't say which CPU variant they have or which components they checked, so every item below is still unknown.",
+  reports=[("Eric Winnington (@ThrowATwit) on X, 2026-10-27","https://x.com/ThrowATwit/status/2115160421242196136",
+   "\u201cStill rocking my Surface Laptop (1st Gen) - It's running Omarchy now since it doesn't support Win11.\u201d (reply to @surface)")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
