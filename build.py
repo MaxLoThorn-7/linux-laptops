@@ -68,6 +68,11 @@ dict(slug="surface-laptop-1st-gen",name="Microsoft Surface Laptop (1st Gen)",dis
   summary="One owner on X says they're still using their first-generation Surface Laptop and that it now runs Omarchy, because the machine doesn't support Windows 11. They don't say which CPU variant they have or which components they checked, so every item below is still unknown.",
   reports=[("Eric Winnington (@ThrowATwit) on X, 2026-10-27","https://x.com/ThrowATwit/status/2115160421242196136",
    "\u201cStill rocking my Surface Laptop (1st Gen) - It's running Omarchy now since it doesn't support Win11.\u201d (reply to @surface)")]),
+dict(slug="lenovo-thinkpad-x200",name="Lenovo ThinkPad X200 (2008)",distro="Omarchy 4.5 rc2 (pre-release)",overall="Experimental",
+  wifi=U,suspend=U,camera=U,audio=U,display=U,battery=U,
+  summary="One owner on X installed the Omarchy 4.5 release candidate on an 18-year-old ThinkPad X200 (Core 2 Duo P8400, Intel GMA 4500MHD graphics, 6GB RAM, 128GB SSD) and says the install took 2 minutes 32 seconds. That's a report that it installs, not that everything works: they don't say how it runs day to day or which components they checked, so every item below is still unknown. It's marked experimental because it was a pre-release build on very old hardware.",
+  reports=[("Jonny Heggheim (@jonnyheggheim) on X, 2026-10-28","https://x.com/jonnyheggheim/status/2115482194097414165",
+   "\u201c@Omarchy 4.5rc2 on a ThinkPad X200 from 2008: installed in 2m 32s. Core 2 Duo P8400, GMA 4500MHD, 6 GB RAM, 128 GB SSD. Not bad for an 18-year-old laptop!\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
