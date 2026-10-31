@@ -82,6 +82,11 @@ dict(slug="macbook-pro-2016-touch-bar",name="Apple MacBook Pro 15\" with Touch B
    "\u201c\u2026codex solved it: a firmware piece for the damned T1 chip was missing, plus enabling the speaker channel.\u201d Earlier in the thread: \u201cThe panel on this MacBook is stratospheric. It runs a bit warm, but I suspect it's dirty inside\u201d and \u201cI'm at 4K with everything maxed and it warms up a little.\u201d (excerpts)"),
    ("Bjorn Dunkel (@bjorndunkel) on X, 2026-10-29","https://x.com/bjorndunkel/status/2115919534255440038",
    "\u201cOmarchy made my 2016 MacBook Pro work again. As I could not install the latest python to the ole intel Mac I switch to @omarchy\u201d (screen size not stated; post goes on to ask for TeamViewer help)")]),
+dict(slug="asus-chromebook-c523n",name="ASUS Chromebook C523N",distro="Omarchy (installed after Debian, to fix partitions)",overall="Works (minor fix)",
+  wifi=U,suspend=U,camera=U,audio="Needed setup (done by an AI agent over SSH; details not given)",display=U,battery=U,
+  summary="One owner on X brought an old ASUS C523N Chromebook (8GB RAM) back to life with Omarchy. The Omarchy installer first failed with a \u201cno space\u201d error, so they installed Debian to sort out the disk partitions and then installed Omarchy over it. Audio needed configuring, which they had the Codex AI agent handle over SSH, and they don't say what the fix was. They also don't say whether they had to replace the Chromebook's firmware to boot Linux, which many Chromebooks need, so check that before you start. Wi-Fi, suspend, camera, display and battery are still unreported.",
+  reports=[("Erdepfel (@Erdepfel) on X, 2026-10-30","https://x.com/Erdepfel/status/2116289435088343392",
+   "\u201cHey @omarchy, my old ASUS C523N Chromebook is alive again! The installer reported \u2018no space,\u2019 so I installed Debian first to fix the partitions, then Omarchy. Codex handled the remaining setup and audio configuration over SSH. Now running Linux and Codex CLI on 8GB RAM.\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
