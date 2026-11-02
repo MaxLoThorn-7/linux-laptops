@@ -94,6 +94,11 @@ dict(slug="surface-pro-3",name="Microsoft Surface Pro 3 (2014)",distro="Omarchy"
    "\u201c@omarchy is alive on my 2014 Surface Pro 3. The touchscreen just works. Tapping through panels, switching workspaces with my finger, no config at all. And everything feels smooth, GPS also works. The shortcuts are just there out of the box.\u201d \u2026 \u201cNext I will test how the battery holds up in normal use.\u201d (excerpts; emoji removed)"),
    ("@KuritoL follow-up reply on X, 2026-10-31","https://x.com/KuritoL/status/2116523341423206894",
    "\u201cWell, it was a pretty straightforward install. No blockers at all. I could have finished even sooner if I did not have personal stuff to deal with.\u201d")]),
+dict(slug="lenovo-thinkpad-t470s",name="Lenovo ThinkPad T470s",distro="Omarchy",overall="Works (few details)",
+  wifi=U,suspend=U,camera=U,audio=U,display=U,battery=U,
+  summary="One owner on X (a consulting firm's account) pulled an old ThinkPad T470s with 16 GB of RAM and 1 TB of storage out of a drawer, installed Omarchy on it, and now uses it as their travel laptop for building applications. They report it in daily use but don't mention any specific hardware, so Wi-Fi, suspend, camera, audio, display, battery and the keyboard/trackpad are all still unreported. The rest of their thread is about Omarchy's built-in AI agent feature, not this laptop's hardware.",
+  reports=[("Survis Consulting (@Survis_com) on X, 2026-10-30","https://x.com/Survis_com/status/2115987058741166535",
+   "\u201cMy old Lenovo T470s was sitting in a drawer. 16 GB of RAM, 1 TB of storage, nothing to do. This week I installed Omarchy on it, an Arch Linux desktop from David Heinemeier Hansson built on Hyprland. Now it is my travel laptop for building applications.\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
