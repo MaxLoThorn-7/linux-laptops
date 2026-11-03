@@ -99,6 +99,11 @@ dict(slug="lenovo-thinkpad-t470s",name="Lenovo ThinkPad T470s",distro="Omarchy",
   summary="One owner on X (a consulting firm's account) pulled an old ThinkPad T470s with 16 GB of RAM and 1 TB of storage out of a drawer, installed Omarchy on it, and now uses it as their travel laptop for building applications. They report it in daily use but don't mention any specific hardware, so Wi-Fi, suspend, camera, audio, display, battery and the keyboard/trackpad are all still unreported. The rest of their thread is about Omarchy's built-in AI agent feature, not this laptop's hardware.",
   reports=[("Survis Consulting (@Survis_com) on X, 2026-10-30","https://x.com/Survis_com/status/2115987058741166535",
    "\u201cMy old Lenovo T470s was sitting in a drawer. 16 GB of RAM, 1 TB of storage, nothing to do. This week I installed Omarchy on it, an Arch Linux desktop from David Heinemeier Hansson built on Hyprland. Now it is my travel laptop for building applications.\u201d")]),
+dict(slug="surface-go-2018",name="Microsoft Surface Go (2018)",distro="Omarchy",overall="Works",
+  wifi=U,suspend=U,camera=U,audio=U,display=U,battery=U,
+  summary="One owner on X installed Omarchy on a 2018 Surface Go that could barely run Windows, and says the install took five minutes and everything just worked. They now use it as a front end for AI agents (Claude, ChatGPT) with Tailscale to heavier machines. They don't say which CPU/storage variant they have or which components they checked, so every item below is still unknown. The Type Cover keyboard and the pen are also unreported.",
+  reports=[("Mark Relph (@mrelph) on X, 2026-11-02","https://x.com/mrelph/status/2117394175125750119",
+   "\u201cThis 2018 Surface Go barely ran Windows. Now it\u2019s a front end for AI agents. Omarchy installed in five minutes and everything just worked. Claude, ChatGPT and my agents, with Tailscale to the machines doing the heavy lifting. Saved from e-waste.\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
