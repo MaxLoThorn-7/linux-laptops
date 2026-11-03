@@ -116,12 +116,20 @@ blockquote{border-left:4px solid #ccc;margin:.5rem 0;padding:.25rem .75rem;backg
 footer{font-size:.85rem;color:#666}@media(prefers-color-scheme:dark){body{background:#121212;color:#e6e6e6}table,blockquote{background:#1d1d1d}th{background:#262626}th,td{border-color:#333}header a{color:#ccc}}"""
 def cls(v): return "u" if v==U else ("ok" if v.startswith("Works") else "warn")
 def cell(v): return f'<span class="{cls(v)}">{html.escape(v)}</span>'
-def page(title,body,depth=0):
+BASE="https://maxlothorn-7.github.io/linux-laptops/"
+SITE="Linux laptops, verified by owners"
+def clip(t,n=155):
+    t=" ".join(t.split())
+    if len(t)<=n: return t
+    return t[:n-1].rsplit(" ",1)[0].rstrip(",;:. ")+"\u2026"
+def page(title,body,depth=0,desc="Owner-reported Linux and Omarchy laptop compatibility, with sources.",path="",full_title=None):
     p="../"*depth
+    ft=full_title or f"{title} \u00b7 {SITE}"
+    et=html.escape(ft); ed=html.escape(desc,quote=True); eu=html.escape(BASE+path,quote=True)
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="google-site-verification" content="TjpcVWFtCRT0HTAodlyFz_t3EosdQ0vKlujXUvH4IUM" /><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{html.escape(title)} · Linux laptops, verified by owners</title><meta name="description" content="Owner-reported Linux and Omarchy laptop compatibility, with sources."><link rel="stylesheet" href="{p}style.css"></head><body>
-<header><h1><a href="{p}index.html">Linux laptops, verified by owners</a></h1><nav><a href="{p}index.html">Table</a> · <a href="{p}about.html">About &amp; method</a> · <a href="{p}submit.html">Submit a report</a></nav></header>
-<main>{body}</main><footer>Every claim links to a public owner report. “unknown” means no report found yet, not “broken”.</footer><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "a672c8bbb0704c30b4d89dbf8ba579fe"}}'></script></body></html>"""
+<title>{et}</title><meta name="description" content="{ed}"><link rel="canonical" href="{eu}"><meta property="og:type" content="website"><meta property="og:site_name" content="{SITE}"><meta property="og:title" content="{html.escape(ft,quote=True)}"><meta property="og:description" content="{ed}"><meta property="og:url" content="{eu}"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="{html.escape(ft,quote=True)}"><meta name="twitter:description" content="{ed}"><link rel="stylesheet" href="{p}style.css"></head><body>
+<header><h1><a href="{p}index.html">{SITE}</a></h1><nav><a href="{p}index.html">Table</a> \u00b7 <a href="{p}about.html">About &amp; method</a> \u00b7 <a href="{p}submit.html">Submit a report</a></nav></header>
+<main>{body}</main><footer>Every claim links to a public owner report. \u201cunknown\u201d means no report found yet, not \u201cbroken\u201d.</footer><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "a672c8bbb0704c30b4d89dbf8ba579fe"}}'></script></body></html>"""
 os.makedirs("laptops",exist_ok=True)
 open("style.css","w").write(CSS)
 rows=""
@@ -136,27 +144,33 @@ home=f"""<p>Owner reports of how specific laptops run <strong>Omarchy</strong> a
 <script>const q=document.getElementById('q'),d=document.getElementById('d'),s=document.getElementById('s');
 function f(){{let c=0;for(const r of document.querySelectorAll('#t tbody tr')){{const ok=r.dataset.text.includes(q.value.toLowerCase())&&r.dataset.distro.includes(d.value)&&r.dataset.text.includes(s.value);r.hidden=!ok;c+=ok}}document.getElementById('n').textContent=c+' model(s) shown';}}
 [q,d,s].forEach(e=>e.addEventListener('input',f));f();</script>"""
-open("index.html","w").write(page("Compatibility table",home))
+open("index.html","w").write(page("Compatibility table",home,full_title="Linux laptop compatibility table: owner reports for Omarchy and Linux",
+  desc=f"Owner-reported compatibility for {len(DATA)} laptops running Omarchy and other Linux setups. Wi-Fi, suspend, audio and more, each row linked to a public source.",path=""))
 for d in DATA:
     rep="".join(f'<h3><a href="{u}">{html.escape(t)}</a></h3><blockquote>{html.escape(q)}</blockquote>' for t,u,q in d["reports"])
     tbl="".join(f"<tr><th>{n}</th><td>{cell(d[k])}</td></tr>" for k,n in COLS)
     body=f"""<h2>{html.escape(d["name"])}</h2><p><strong>Setup:</strong> {html.escape(d["distro"])} · <strong>Overall:</strong> {cell(d["overall"])}</p><p>{html.escape(d["summary"])}</p>
-<table>{tbl}</table><h2>Owner reports</h2>{rep}<p>Own this laptop? <a href="../submit.html">Add your report</a>, especially for anything marked unknown.</p>"""
-    open(f"laptops/{d['slug']}.html","w").write(page(d["name"],body,1))
+<table>{tbl}</table><h2>Owner reports</h2>{rep}<p>Own this laptop? <a href="../submit.html">Add your report</a>, especially for anything marked unknown.</p>
+<h2>Other laptops on the list</h2><p>"""+" \u00b7 ".join(f'<a href="{o["slug"]}.html">{html.escape(o["name"])}</a>' for o in DATA if o["slug"]!=d["slug"])+"""</p>"""
+    first=d["summary"].split(". ")[0].rstrip(".")+"."
+    ds="Omarchy" if d["distro"].startswith("Omarchy") else d["distro"].split(" (")[0]
+    ldesc=clip(f'{d["name"]} on {ds}: {d["overall"]}. {first}')
+    open(f"laptops/{d['slug']}.html","w").write(page(d["name"],body,1,desc=ldesc,path=f"laptops/{d['slug']}.html",
+      full_title=f'{d["name"]} on {ds}: owner reports'))
 about="""<h2>About &amp; methodology</h2><p>This site collects <em>public, first-hand owner reports</em> of how laptops run Omarchy and other Linux setups.</p>
 <ul><li>Every compatibility claim links to its source. We don't test hardware ourselves (yet).</li><li>“Unknown” means nobody has reported on it yet. It doesn't mean the feature is broken.</li>
 <li>Overall status follows the report: <em>Works</em>, <em>Works (minor fix)</em>, <em>Experimental</em>, or <em>Problems</em>.</li><li>Quotes are copied word for word. Reports are dated, and newer kernels and Omarchy releases can change results.</li>
 <li>Corrections are welcome via the <a href="submit.html">submit page</a>.</li></ul>
 <h2>Affiliate disclosure</h2><p><strong>[Placeholder]</strong> This site currently has no affiliate links. If we add them later (for example to laptop makers' stores), we will mark them clearly and say so here. Affiliate links will never change a compatibility status.</p>
 <p>Not affiliated with Omarchy, Basecamp, or any laptop manufacturer.</p>"""
-open("about.html","w").write(page("About",about))
+open("about.html","w").write(page("About",about,full_title="About and method: how this Linux laptop list is sourced",desc="How the list works: public first-hand owner reports only, every claim linked to its source, and unknown means nobody has reported yet.",path="about.html"))
 submit="""<h2>Submit your report</h2><p>Own a laptop running Omarchy or another Linux setup? Send us:</p><ol>
 <li>Exact model (and CPU/GPU variant)</li><li>Distro and version (e.g. Omarchy 3.6), kernel if known</li>
 <li>For each item, say works / needed a fix / broken / not tested: Wi-Fi, Bluetooth, suspend/resume, camera, audio, internal display, external displays, battery life, fingerprint</li>
 <li>Any fixes you applied</li><li>Optionally, a public link (X post, Reddit, blog) we can cite</li></ol>
 <p><strong>Email:</strong> <a href="mailto:REPLACE_ME@example.com?subject=Laptop%20report">REPLACE_ME@example.com</a> (placeholder)<br><strong>GitHub issues:</strong> coming soon (placeholder)</p>
 <p>We only publish what you report. Anything you don't mention stays “unknown”.</p>"""
-open("submit.html","w").write(page("Submit a report",submit))
+open("submit.html","w").write(page("Submit a report",submit,full_title="Submit a Linux laptop report: what to include",desc="Own a laptop running Omarchy or another Linux setup? Here is what to send us: exact model, distro, and what works or needed a fix.",path="submit.html"))
 print("built",len(DATA))
 
 # sitemap
