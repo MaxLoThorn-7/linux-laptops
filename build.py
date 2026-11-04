@@ -104,6 +104,15 @@ dict(slug="surface-go-2018",name="Microsoft Surface Go (2018)",distro="Omarchy",
   summary="One owner on X installed Omarchy on a 2018 Surface Go that could barely run Windows, and says the install took five minutes and everything just worked. They now use it as a front end for AI agents (Claude, ChatGPT) with Tailscale to heavier machines. They don't say which CPU/storage variant they have or which components they checked, so every item below is still unknown. The Type Cover keyboard and the pen are also unreported.",
   reports=[("Mark Relph (@mrelph) on X, 2026-11-02","https://x.com/mrelph/status/2117394175125750119",
    "\u201cThis 2018 Surface Go barely ran Windows. Now it\u2019s a front end for AI agents. Omarchy installed in five minutes and everything just worked. Claude, ChatGPT and my agents, with Tailscale to the machines doing the heavy lifting. Saved from e-waste.\u201d")]),
+dict(slug="surface-laptop-3",name="Microsoft Surface Laptop 3 (2019)",distro="Omarchy",overall="Works (minor fix)",
+  wifi=U,suspend=U,camera=U,audio="Needed fix (startup; with linux-surface kernel, per one owner)",display=U,battery=U,
+  summary="Two owners report Omarchy on a 2019 Surface Laptop 3. One on X says it runs perfectly fine, without naming which components they checked. Another on Reddit says it works well after installing the linux-surface kernel and applying a few tweaks so audio starts with the OS; they don't spell out those tweaks. A third Reddit commenter (same thread) says their 8GB Surface Laptop 3 runs great without the linux-surface kernel for anything they use, and they haven't tested the camera. Wi-Fi, suspend, camera, display, battery, Type Cover and pen are still unreported in detail; experiences with the Surface kernel appear to vary by owner.",
+  reports=[("ymanyen3 (@ymanyen3) on X, 2026-08-19","https://x.com/ymanyen3/status/2090070452203061343",
+   "\u201cAbsolutely agree. Omarchy is running perfectly fine on Surface Laptop 3 from 2019.\u201d (reply to DHH)"),
+   ("r/omarchy comment by u/Alfrai, 2026-09-24","https://www.reddit.com/r/omarchy/comments/1wpaf6b/omarchy_on_surface_laptop/",
+   "\u201cI have omarchy on my surface laptop 3, works like a charm after installing the Linux surface kernel and a few tweaks to make the audio start at the start of the OS\u201d"),
+   ("r/omarchy comment by u/OligarchyAmbulance, 2026-09-25","https://www.reddit.com/r/omarchy/comments/1wpaf6b/omarchy_on_surface_laptop/",
+   "\u201cI have an old 8GB Surface Laptop 3, absolutely, completely unusable on Windows. I installed Fedora and Omarchy and it runs great, no linux-surface kernel needed for anything I've run into (I haven't tested the camera but don't care about that. It totally brought the computer back to life.\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
