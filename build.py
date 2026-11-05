@@ -113,6 +113,15 @@ dict(slug="surface-laptop-3",name="Microsoft Surface Laptop 3 (2019)",distro="Om
    "\u201cI have omarchy on my surface laptop 3, works like a charm after installing the Linux surface kernel and a few tweaks to make the audio start at the start of the OS\u201d"),
    ("r/omarchy comment by u/OligarchyAmbulance, 2026-09-25","https://www.reddit.com/r/omarchy/comments/1wpaf6b/omarchy_on_surface_laptop/",
    "\u201cI have an old 8GB Surface Laptop 3, absolutely, completely unusable on Windows. I installed Fedora and Omarchy and it runs great, no linux-surface kernel needed for anything I've run into (I haven't tested the camera but don't care about that. It totally brought the computer back to life.\u201d")]),
+dict(slug="lenovo-thinkpad-t480",name="Lenovo ThinkPad T480 (2018)",distro="Omarchy",overall="Works (minor fix)",
+  wifi=U,suspend=U,camera=U,audio=U,display=U,battery="Needed fix (dual-battery panel showed only one; owner had an AI agent rewrite the panel)",
+  summary="Three owners on X report Omarchy on a ThinkPad T480. One calls it their portable compute / control-plane laptop and asks who has a better Omarchy machine. Another runs it as a home server. A third says the dual internal batteries only showed as one in Omarchy until they asked an AI agent to rewrite the battery panel, which took about five minutes and gave them a bar icon per battery. Wi-Fi, suspend, camera, audio and display are still unreported in detail.",
+  reports=[("CompilingThings (@Compilethings) on X, 2026-10-30","https://x.com/Compilethings/status/2116222826080276868",
+   "\u201cTell me a better laptop than a T480 running Omarchy. I'll wait.\u201d"),
+   ("Karthik Raju (@karthikraju391) on X, 2026-10-15","https://x.com/karthikraju391/status/2110597761125261629",
+   "\u201cMy agentmaxxing setup: - thinkpad t480 running omarchy as the home server\u2026\u201d (excerpt; post continues with other tools)"),
+   ("Ruth Kant (@Ruth_Kant_) on X, 2026-10-31","https://x.com/Ruth_Kant_/status/2116582360812867659",
+   "\u201cMy T480 has two batteries, Omarchy only showed one. I justz told it to rewrite the battery panel to include more than one battry. Five minutes later, it was done, and I even had an individual bar icon for each battery.\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
