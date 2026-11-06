@@ -122,6 +122,15 @@ dict(slug="lenovo-thinkpad-t480",name="Lenovo ThinkPad T480 (2018)",distro="Omar
    "\u201cMy agentmaxxing setup: - thinkpad t480 running omarchy as the home server\u2026\u201d (excerpt; post continues with other tools)"),
    ("Ruth Kant (@Ruth_Kant_) on X, 2026-10-31","https://x.com/Ruth_Kant_/status/2116582360812867659",
    "\u201cMy T480 has two batteries, Omarchy only showed one. I justz told it to rewrite the battery panel to include more than one battry. Five minutes later, it was done, and I even had an individual bar icon for each battery.\u201d")]),
+dict(slug="dell-xps-13-2026",name="Dell XPS 13 (2026)",distro="Omarchy",overall="Works",
+  wifi=U,suspend="Owner says power states work (one owner, no detail)",camera=U,audio=U,display=U,battery=U,
+  summary="Three owners on X say Omarchy runs well on a newly released Dell XPS 13. One names the 2026 Wildcat Lake model with 16GB of RAM and calls it really nice. Another says everything, including the power states, just works and uses it as a light client laptop. A third runs it next to a desktop and says the XPS 13 is so snappy they barely want the desktop. None of them say which components they tested, so Wi-Fi, camera, audio, display and battery life are still unreported in detail. Only one post names the Wildcat Lake chip, so the other two are assumed to be the same new XPS 13 but don't say so.",
+  reports=[("Oliver Allpress (@OliverAllpress) on X, 2026-11-05","https://x.com/OliverAllpress/status/2118463678735585597",
+   "\u201cI have the 2026 Wildcat lake Dell XPS13 16GB and its really nice with Omarchy.\u201d (reply)"),
+   ("Jason Milldrum (@NT7S_Jason) on X, 2026-11-05","https://x.com/NT7S_Jason/status/2118451582497075668",
+   "\u201cI got the XPS13 thanks to DHH's recommendation to run Omarchy and it's primo, highly recommended light client laptop. Heavy work relegated to a shed PC on my Tailnet. Big ups to Dell for supporting Omarchy on this hardware. Everything, including the power states, just work.\u201d"),
+   ("Yael Ossowski (@YaelOss) on X, 2026-11-05","https://x.com/YaelOss/status/2118442514025722165",
+   "\u201ci run omarchy on an old Ryzen desktop computer with 32GB RAM and have another instance on a brand-new xps 13 with 16GB RAM. the XPS 13 is so snappy I really don't even want the desktop anymore (apart from massive HDD space). Dell makes great products, and @omarchy just works\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
