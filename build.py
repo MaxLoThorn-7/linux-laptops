@@ -168,11 +168,11 @@ th,td{border:1px solid #ddd;padding:.45rem;text-align:left;vertical-align:top}th
 .u{color:#888;font-style:italic}.ok{color:#11702f;font-weight:600}.warn{color:#9a5b00;font-weight:600}
 blockquote{border-left:4px solid #ccc;margin:.5rem 0;padding:.25rem .75rem;background:#fff}
 .filters{display:flex;gap:.75rem;flex-wrap:wrap;margin:.75rem 0}input,select{padding:.35rem;font:inherit}
-footer{font-size:.85rem;color:#666}@media(prefers-color-scheme:dark){body{background:#121212;color:#e6e6e6}table,blockquote{background:#1d1d1d}th{background:#262626}th,td{border-color:#333}header a{color:#ccc}}"""
+footer{font-size:.85rem;color:#666}.buy{border:1px solid #ccc;padding:.5rem .75rem;margin:1rem 0}@media(prefers-color-scheme:dark){body{background:#121212;color:#e6e6e6}table,blockquote{background:#1d1d1d}th{background:#262626}th,td{border-color:#333}header a{color:#ccc}}"""
 def cls(v): return "u" if v==U else ("ok" if v.startswith("Works") else "warn")
 def cell(v): return f'<span class="{cls(v)}">{html.escape(v)}</span>'
 BASE="https://maxlothorn-7.github.io/linux-laptops/"
-SITE="Linux laptops, verified by owners"
+SITE="Linux laptops: owner reports"
 def clip(t,n=155):
     t=" ".join(t.split())
     if len(t)<=n: return t
@@ -183,14 +183,30 @@ def page(title,body,depth=0,desc="Owner-reported Linux and Omarchy laptop compat
     et=html.escape(ft); ed=html.escape(desc,quote=True); eu=html.escape(BASE+path,quote=True)
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="google-site-verification" content="TjpcVWFtCRT0HTAodlyFz_t3EosdQ0vKlujXUvH4IUM" /><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{et}</title><meta name="description" content="{ed}"><link rel="canonical" href="{eu}"><meta property="og:type" content="website"><meta property="og:site_name" content="{SITE}"><meta property="og:title" content="{html.escape(ft,quote=True)}"><meta property="og:description" content="{ed}"><meta property="og:url" content="{eu}"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="{html.escape(ft,quote=True)}"><meta name="twitter:description" content="{ed}"><link rel="stylesheet" href="{p}style.css"></head><body>
-<header><h1><a href="{p}index.html">{SITE}</a></h1><nav><a href="{p}index.html">Table</a> \u00b7 <a href="{p}about.html">About &amp; method</a> \u00b7 <a href="{p}submit.html">Submit a report</a></nav></header>
+<header><h1><a href="{p}index.html">{SITE}</a></h1><nav><a href="{p}index.html">Table</a> \u00b7 <a href="{p}guides/index.html">Buyer guides</a> \u00b7 <a href="{p}about.html">About &amp; method</a> \u00b7 <a href="{p}submit.html">Submit a report</a></nav></header>
 <main>{body}</main><footer>Every claim links to a public owner report. \u201cunknown\u201d means no report found yet, not \u201cbroken\u201d.</footer><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "a672c8bbb0704c30b4d89dbf8ba579fe"}}'></script></body></html>"""
+import json
+from guides import GUIDES
+DISCLOSURE="As an eBay Partner Network affiliate, I may earn a commission from qualifying purchases."
+AFF={}
+if os.path.exists("affiliate_links.json"):
+    for s,v in json.load(open("affiliate_links.json")).items():
+        u=v.get("url","")
+        if u.startswith("https://") and any(u.split("/")[2].endswith(h) for h in ("ebay.com","ebay.us")): AFF[s]=v
+def guidelink(d):
+    g=[x for x in GUIDES if any(d["slug"].startswith(r) for r in x["related"])]
+    return "".join(f'<p>See also: <a href="../guides/{x["slug"]}.html">{html.escape(x["title"])}</a></p>' for x in g)
+def buybox(d):
+    v=AFF.get(d["slug"])
+    if not v or d["overall"].startswith("Experimental"): return ""
+    return f'<div class="buy"><p><a href="{html.escape(v["url"],quote=True)}" rel="sponsored nofollow noopener">{html.escape(v.get("label","Search used listings on eBay"))}</a></p><p><small>{DISCLOSURE} We don\'t check listings; confirm the exact model and variant before buying. Affiliate links never change a compatibility status.</small></p></div>'
 os.makedirs("laptops",exist_ok=True)
+os.makedirs("guides",exist_ok=True)
 open("style.css","w").write(CSS)
 rows=""
 for d in DATA:
     rows+=f'<tr data-distro="{html.escape(d["distro"].lower())}" data-text="{html.escape((d["name"]+" "+d["overall"]).lower())}"><td><a href="laptops/{d["slug"]}.html">{html.escape(d["name"])}</a></td><td>{html.escape(d["distro"])}</td><td>{cell(d["overall"])}</td>'+"".join(f"<td>{cell(d[k])}</td>" for k,_ in COLS)+f'<td>{len(d["reports"])}</td></tr>\n'
-home=f"""<p>Owner reports of how specific laptops run <strong>Omarchy</strong> and other Linux setups. Each row links to its sources. Small and early: {len(DATA)} models so far.</p>
+home=f"""<p>Owner reports of how specific laptops run <strong>Omarchy</strong> and other Linux setups. Each row links to its sources. Small and early: {len(DATA)} models so far, collected from owners, not tested by us. <a href="guides/index.html">Buyer guides</a>: used ThinkPads, Intel MacBooks, Surface.</p>
 <div class="filters"><label>Search <input id="q" placeholder="e.g. lenovo"></label>
 <label>Setup <select id="d"><option value="">All</option><option value="omarchy" selected>Omarchy (any)</option></select></label>
 <label>Status <select id="s"><option value="">All</option><option value="works">Works</option><option value="experimental">Experimental</option></select></label></div>
@@ -205,7 +221,7 @@ for d in DATA:
     rep="".join(f'<h3><a href="{u}">{html.escape(t)}</a></h3><blockquote>{html.escape(q)}</blockquote>' for t,u,q in d["reports"])
     tbl="".join(f"<tr><th>{n}</th><td>{cell(d[k])}</td></tr>" for k,n in COLS)
     body=f"""<h2>{html.escape(d["name"])}</h2><p><strong>Setup:</strong> {html.escape(d["distro"])} · <strong>Overall:</strong> {cell(d["overall"])}</p><p>{html.escape(d["summary"])}</p>
-<table>{tbl}</table><h2>Owner reports</h2>{rep}<p>Own this laptop? <a href="../submit.html">Add your report</a>, especially for anything marked unknown.</p>
+<table>{tbl}</table>{buybox(d)}{guidelink(d)}<h2>Owner reports</h2>{rep}<p>Own this laptop? <a href="../submit.html">Add your report</a>, especially for anything marked unknown.</p>
 <h2>Other laptops on the list</h2><p>"""+" \u00b7 ".join(f'<a href="{o["slug"]}.html">{html.escape(o["name"])}</a>' for o in DATA if o["slug"]!=d["slug"])+"""</p>"""
     first=d["summary"].split(". ")[0].rstrip(".")+"."
     ds="Omarchy" if d["distro"].startswith("Omarchy") else d["distro"].split(" (")[0]
@@ -216,7 +232,7 @@ about="""<h2>About &amp; methodology</h2><p>This site collects <em>public, first
 <ul><li>Every compatibility claim links to its source. We don't test hardware ourselves (yet).</li><li>“Unknown” means nobody has reported on it yet. It doesn't mean the feature is broken.</li>
 <li>Overall status follows the report: <em>Works</em>, <em>Works (minor fix)</em>, <em>Experimental</em>, or <em>Problems</em>.</li><li>Quotes are copied word for word. Reports are dated, and newer kernels and Omarchy releases can change results.</li>
 <li>Corrections are welcome via the <a href="submit.html">submit page</a>.</li></ul>
-<h2>Affiliate disclosure</h2><p><strong>[Placeholder]</strong> This site currently has no affiliate links. If we add them later (for example to laptop makers' stores), we will mark them clearly and say so here. Affiliate links will never change a compatibility status.</p>
+<h2>Affiliate disclosure</h2><p>"+DISCLOSURE+" Some laptop pages may include an eBay link marked with this notice. Owner reports stay free to read, and affiliate links never change a compatibility status.</p>
 <p>Not affiliated with Omarchy, Basecamp, or any laptop manufacturer.</p>"""
 open("about.html","w").write(page("About",about,full_title="About and method: how this Linux laptop list is sourced",desc="How the list works: public first-hand owner reports only, every claim linked to its source, and unknown means nobody has reported yet.",path="about.html"))
 submit="""<h2>Submit your report</h2><p>Own a laptop running Omarchy or another Linux setup? Send us:</p><ol>
@@ -226,9 +242,13 @@ submit="""<h2>Submit your report</h2><p>Own a laptop running Omarchy or another 
 <p><strong>Email:</strong> <a href="mailto:REPLACE_ME@example.com?subject=Laptop%20report">REPLACE_ME@example.com</a> (placeholder)<br><strong>GitHub issues:</strong> coming soon (placeholder)</p>
 <p>We only publish what you report. Anything you don't mention stays “unknown”.</p>"""
 open("submit.html","w").write(page("Submit a report",submit,full_title="Submit a Linux laptop report: what to include",desc="Own a laptop running Omarchy or another Linux setup? Here is what to send us: exact model, distro, and what works or needed a fix.",path="submit.html"))
-print("built",len(DATA))
+gi="<h2>Buyer guides</h2><p>Each guide collects the owner reports for one family of laptops, with sources. We haven't tested these machines.</p><ul>"+"".join(f'<li><a href="{g["slug"]}.html">{html.escape(g["title"])}</a>: {html.escape(g["desc"])}</li>' for g in GUIDES)+"</ul>"
+open("guides/index.html","w").write(page("Buyer guides",gi,1,desc="Buyer guides built from public owner reports of Omarchy on used ThinkPads, Intel MacBooks and Microsoft Surface devices.",path="guides/index.html",full_title="Buyer guides: used laptops for Omarchy, from owner reports"))
+for g in GUIDES:
+    open(f"guides/{g['slug']}.html","w").write(page(g["title"],g["body"],1,desc=g["desc"],path=f"guides/{g['slug']}.html",full_title=g["title"]))
+print("built",len(DATA),"guides",len(GUIDES),"aff",len(AFF))
 
 # sitemap
 BASE="https://maxlothorn-7.github.io/linux-laptops/"
-urls=["", "about.html", "submit.html"]+[f"laptops/{d['slug']}.html" for d in DATA]
+urls=["", "about.html", "submit.html", "guides/index.html"]+[f"guides/{g['slug']}.html" for g in GUIDES]+[f"laptops/{d['slug']}.html" for d in DATA]
 open("sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+"".join(f"<url><loc>{BASE}{u}</loc></url>\n" for u in urls)+"</urlset>\n")

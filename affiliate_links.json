@@ -1,0 +1,14 @@
+{
+ "lenovo-thinkpad-t480": {
+  "url": "https://www.ebay.com/sch/i.html?_nkw=thinkpad+t480+-t480s&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339243399&customid=t480exact&toolid=10001&mkevt=1",
+  "label": "Search used ThinkPad T480 listings on eBay"
+ },
+ "macbook-pro-2016-touch-bar": {
+  "url": "https://www.ebay.com/sch/i.html?_nkw=macbook+pro+2016+15+inch+touch+bar+intel&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339243399&customid=mbp201615touchbar&toolid=10001&mkevt=1",
+  "label": "Search used 15-inch 2016 Touch Bar MacBook Pro listings on eBay"
+ },
+ "surface-laptop-3": {
+  "url": "https://www.ebay.com/sch/i.html?_nkw=surface+laptop+3+2019&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339243399&customid=surfacelaptop32019&toolid=10001&mkevt=1",
+  "label": "Search used Surface Laptop 3 (2019) listings on eBay"
+ }
+}
