@@ -144,6 +144,21 @@ dict(slug="macbook-pro-m1-2020",name="Apple MacBook Pro 13\" (M1, 2020)",distro=
    "\u201cOmarchy 4.5 dropped yesterday with native M1 support, so I gave it a shot on my MacBook. It took a bit to get going and the installer still has a few bugs, but it worked in the end. Now I\u2019ve got Omarchy Linux running on my M1 MacBook PRO :)\u201d"),
    ("John Engates (@jengates) on X, 2026-11-07","https://x.com/jengates/status/2118904627907482096",
    "\u201cI installed Omarchy Linux on my old M1 Macbook Pro and it's very nice. Will be my weekend project to master this thing. Thanks @dhh\u201d")]),
+dict(slug="macbook-air-m1-2020",name="Apple MacBook Air (M1, 2020)",distro="Omarchy 4.5 (native M1)",overall="Works",
+  wifi=U,suspend=U,camera=U,audio="Mixed (one owner says audio works perfectly; another says the internal mic showed no input on 4.5)",display="Works (USB-C to HDMI external monitor, per one owner)",battery=U,
+  summary="Five owners on X report Omarchy on an M1 MacBook Air (the 2020 13-inch). One says installing it made the laptop feel like new again and calls it blazing fast. Another did a clean install of Omarchy 4.5 with the project's native macOS installer app after running an earlier Quattro alpha, and called the 4.5 install very polished; the same owner later said the internal microphone was selected but showed no input (including with Superwhisper), and they confirmed the mic still works in macOS. A third says a DMG install ran flawless out of the box, including audio, was super snappy, and is set up to dual-boot. A fourth says their M1 Air has a new life and calls Omarchy ridiculously smooth. A fifth says it's really cool on an MBA M1 and that connecting a USB-C to HDMI monitor (via something they call aurora) works. Wi-Fi, suspend, camera and battery life are still unreported in detail. The M1 MacBook Air was only sold as a 13-inch; owners say \"M1 MacBook Air\" without always naming inches.",
+  reports=[("Dan Eriksson (@erikssondan) on X, 2026-11-06","https://x.com/erikssondan/status/2118771371090096285",
+   "\u201cFinally! @omarchy installed on my MacBook Air M1. It feels like new again. Blazing fast. And I don't have to use MacOS anymore. Thank you!\u201d"),
+   ("theRealDarkHorse (@jeffreydsauer) on X, 2026-11-06","https://x.com/jeffreydsauer/status/2118743680228147543",
+   "\u201cCongrats to @OmarchyMac team for releasing the new native macOS Installer app! I was running an earlier Quattro alpha version, and just finished a clean install of macOS, and install of Omarchy 4.5 on my 2020 M1 Macbook Air. Wow! Very polished!\u201d"),
+   ("@jeffreydsauer follow-up replies on X, 2026-11-06","https://x.com/jeffreydsauer/status/2118755981551378573",
+   "\u201cDoes the M1 Macbook Air microphone work on Omarchy 4.5 with Superwhisper? I have it selected, but I do not see any input happening\u201d Then: \u201cSo... I booted into macOS to verify the internal Macbook Air mic works, and it does. Back in omarchy now, having an agent try to diagnose why I can no audio from the internal mic...\u201d"),
+   ("flyonthewall (@flyonthewa87725) on X, 2026-11-04","https://x.com/flyonthewa87725/status/2118105787398766642",
+   "\u201cI ran a easy DMG install on my macbook air m1. Runs flawless right out the box everything including audio works perfectly. Super snappy. Its set up to dual boot but im sure i wont be using Macos\u201d"),
+   ("Peter Skaronis (@skaronis) on X, 2026-11-05","https://x.com/skaronis/status/2118436081796534506",
+   "\u201cMy M1 MacBook Air has a new life. Awesome work @dhh Omarchy has tamed Linux. Ridiculously smooth. We can truly fix everything.\u201d"),
+   ("Ayush Sanj (@AyushSanj) on X, 2026-10-20","https://x.com/AyushSanj/status/2112496916898656384",
+   "\u201c@omarchy in mba m1, its really cool. tried aurora to connect usb c to hdmi monitor, works.\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
