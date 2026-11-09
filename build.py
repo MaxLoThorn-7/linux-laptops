@@ -159,6 +159,13 @@ dict(slug="macbook-air-m1-2020",name="Apple MacBook Air (M1, 2020)",distro="Omar
    "\u201cMy M1 MacBook Air has a new life. Awesome work @dhh Omarchy has tamed Linux. Ridiculously smooth. We can truly fix everything.\u201d"),
    ("Ayush Sanj (@AyushSanj) on X, 2026-10-20","https://x.com/AyushSanj/status/2112496916898656384",
    "\u201c@omarchy in mba m1, its really cool. tried aurora to connect usb c to hdmi monitor, works.\u201d")]),
+dict(slug="acer-swift-3",name="Acer Swift 3 (14-inch, SF314 series)",distro="Omarchy (3.0.2 for one owner; version not stated by the other)",overall="Works (few details)",
+  wifi=U,suspend=U,camera=U,audio=U,display=U,battery=U,
+  summary="Two owners report Omarchy installed and running on an Acer Swift 3, but they have different generations of it. One dug out a 2020 Acer Swift 3 after their M4 MacBook crashed repeatedly and now uses the Swift 3 with Omarchy to run AI agents, local CI and code reviews, saying it handled 20+ merged PRs and 2 releases in a day. The other installed Omarchy 3.0.2 on a Swift 3 SF314-71 with 16GB of RAM; their USB stick's built-in UEFI check flagged two missing EFI files, but they went ahead and called the install smooth and successful, and DHH replied that with a matching checksum it looked like a false alarm. Neither owner says how Wi-Fi, suspend, the camera, audio, the display or battery life behave, so those are unknown. The 2020 owner doesn't give the exact model number or chip, so it may not be the same hardware as the SF314-71.",
+  reports=[("Abel Ayalew (@nabroleonx) on X, 2026-11-06","https://x.com/nabroleonx/status/2118755997988601888",
+   "\u201cmy M4 crashed 5+ times in one day trying to run agents + local CI so I dug out my 2020 Acer Swift 3 and put Omarchy on it. it's now running our agents, CI and code reviews: 20+ PRs merged and 2 releases shipped today\u201d"),
+   ("@kvidaxl on GitHub (basecamp/omarchy issue #2255), 2025-10-06","https://github.com/basecamp/omarchy/issues/2255",
+   "Acer Swift 3 (SF314-71, 16GB RAM), omarchy-3.0.2.iso written with Rufus: the USB's UEFI media check reported 2 missing EFI files, but \u201cDespite the failed tests, I proceeded with the installation, which was smooth and successful.\u201d DHH replied: \u201cIf you have the right sha, and the installation works, that seems like a false alarm to me from that tool.\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
