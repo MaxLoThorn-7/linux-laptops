@@ -174,6 +174,15 @@ dict(slug="acer-swift-3",name="Acer Swift 3 (14-inch, SF314 series)",distro="Oma
    "\u201cmy M4 crashed 5+ times in one day trying to run agents + local CI so I dug out my 2020 Acer Swift 3 and put Omarchy on it. it's now running our agents, CI and code reviews: 20+ PRs merged and 2 releases shipped today\u201d"),
    ("@kvidaxl on GitHub (basecamp/omarchy issue #2255), 2025-10-06","https://github.com/basecamp/omarchy/issues/2255",
    "Acer Swift 3 (SF314-71, 16GB RAM), omarchy-3.0.2.iso written with Rufus: the USB's UEFI media check reported 2 missing EFI files, but \u201cDespite the failed tests, I proceeded with the installation, which was smooth and successful.\u201d DHH replied: \u201cIf you have the right sha, and the installation works, that seems like a false alarm to me from that tool.\u201d")]),
+dict(slug="dell-latitude-7440",name="Dell Latitude 7440 (2023)",distro="Omarchy (4.0.0-1 for one owner; version not stated by the other)",overall="Works (Bluetooth quirk)",
+  wifi=U,suspend=U,camera=U,audio=U,display=U,battery=U,
+  summary="Two owners report Omarchy running on a Dell Latitude 7440. One installed it on his 82-year-old dad's 7440 as a birthday gift, saying the install was \u201creally smooth\u201d, and about a week later called Omarchy \u201csmooth as butter\u201d on the old Latitude he set up for his dad (that later post doesn't repeat the model). The other, on Omarchy 4.0.0-1 with an Intel AX211 wireless card, found one real gotcha: turning Bluetooth off from the Omarchy panel removes the Bluetooth radio completely, and neither the panel toggle nor rfkill unblock brings it back; only a suspend/resume or a reboot does. That GitHub issue is now closed, but we haven't confirmed whether this Dell-specific case is fixed. Nobody here reports on suspend in general, the camera, audio, the display or battery life, so those are unknown.",
+  reports=[("Dragos Roua (@dragosroua) on X, 2026-10-31","https://x.com/dragosroua/status/2116467421426971049",
+   "\u201cJoining the crowd and installing @omarchy by @dhh on my dad\u2019s Dell Latitude 7440\u2026 He also uses a laptop, for chess and searching stuff online, every single day.\u201d (excerpt); in a reply the same morning: \u201cIt was really smooth the install.\u201d"),
+   ("Dragos Roua (@dragosroua) on X, 2026-11-06","https://x.com/dragosroua/status/2118608152161587706",
+   "\u201c@omarchy is an absolute beast, I installed it for my dad on an old Dell Latitude. Smooth as butter.\u201d (model not repeated in this post)"),
+   ("@oren on GitHub (basecamp/omarchy issue #6956), 2026-08-19","https://github.com/basecamp/omarchy/issues/6956#issuecomment-5340352331",
+   "\u201cDell Latitude 7440, Omarchy 4.0.0-1, kernel 7.1.8-arch1-3, Intel AX211\u2026 Neither `rfkill unblock bluetooth` nor `omarchy-bluetooth-power on` recovers it\u2026 Only a suspend/resume or reboot brings the radio back.\u201d (excerpt)")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
