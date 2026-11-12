@@ -183,6 +183,23 @@ dict(slug="dell-latitude-7440",name="Dell Latitude 7440 (2023)",distro="Omarchy 
    "\u201c@omarchy is an absolute beast, I installed it for my dad on an old Dell Latitude. Smooth as butter.\u201d (model not repeated in this post)"),
    ("@oren on GitHub (basecamp/omarchy issue #6956), 2026-08-19","https://github.com/basecamp/omarchy/issues/6956#issuecomment-5340352331",
    "\u201cDell Latitude 7440, Omarchy 4.0.0-1, kernel 7.1.8-arch1-3, Intel AX211\u2026 Neither `rfkill unblock bluetooth` nor `omarchy-bluetooth-power on` recovers it\u2026 Only a suspend/resume or reboot brings the radio back.\u201d (excerpt)")]),
+ dict(slug="lenovo-thinkpad-p14s",name="Lenovo ThinkPad P14s (Gen 2 and other generations)",distro="Omarchy (version not stated)",overall="Works (wake quirk)",
+  wifi=U,suspend="Mixed (one Gen 2 owner reports unpredictable wake-up)",camera=U,audio=U,display="Works with external displays (one Gen 2 owner)",battery="One owner says excellent (generation not stated)",
+  summary="Several owners on X run Omarchy on a ThinkPad P14s. The most detailed is a Gen 2 owner who uses it full time with external displays, though in September he listed \u201cunpredictable wake-up\u201d as something he still needed to fix; he doesn't say whether his is the Intel or AMD version. Another owner of an AMD P14s (generation not stated) says the install was straightforward once Secure Boot was turned off, and that setting up the fingerprint reader let him skip typing his password. A third says battery and performance are excellent, and a fourth, who traded in a MacBook Air M3 for a P14s, says a few days in he could move his development work back onto the laptop. One Ryzen P14s owner reports one app-specific problem: YouTube live streams inside VRChat freeze after about 10 seconds. Wi-Fi, camera and audio aren't mentioned by anyone. Not an owner report, but useful: NixOS's hardware config for the Gen 2 AMD model says to set the firmware's Sleep State to \u201cLinux\u201d for suspend to work, which may be worth checking if wake-up misbehaves.",
+  reports=[("JjP (@DoppioJP) on X, 2026-11-07","https://x.com/DoppioJP/status/2119134237874172000",
+   "\u201cI\u2019ve been using full time ThinkPad P14s Gen 2 with Omarchy, external displays, with a mouse and Lofree keyboard\u2026\u201d (excerpt; Intel or AMD not stated)"),
+   ("JjP (@DoppioJP) on X, 2026-09-21","https://x.com/DoppioJP/status/2102176813170512007",
+   "Listed among fixes awaiting attention: \u201cunpredictable wake-up of Omarchy on ThinkPad P14s Gen 2\u201d (no further details given)"),
+   ("RT (@hardrocktan) on X, 2026-09-04","https://x.com/hardrocktan/status/2095716930632266238",
+   "\u201cGot a Thinkpad P14s AMD. Set Secure Boot Off. Flash the latest ISO of Omarchy. Install. Setup finger print (this enable you skip entering the password for everything)\u201d (generation not stated)"),
+   ("Stephen Edginton (@StephenEdginton) on X, 2026-08-12","https://x.com/StephenEdginton/status/2087643358537617773",
+   "\u201c\u2026the battery and performance on thinkpad p14s is excellent on Omarchy\u201d (excerpt; generation not stated)"),
+   ("TIE (@kurtszt) on X, 2026-09-02","https://x.com/kurtszt/status/2095148863464280435",
+   "Posted in Chinese; our translation: traded in a MacBook Air M3 for a ThinkPad P14s, installed Omarchy and used it for a few days, and feels he can move his development back onto the laptop instead of always SSHing into his desktop. (Generation not stated.)"),
+   ("@DrKai_Lab on X, 2026-07-25","https://x.com/DrKai_Lab/status/2080829483159089273",
+   "Posted in Japanese; our translation: on a ThinkPad P14s (Ryzen) running Omarchy, YouTube live streams played through iwaSync in VRChat freeze after about 10 seconds, and changing options didn't fix it. (Generation not stated.)"),
+   ("NixOS hardware config for P14s Gen 2 AMD (context, not an owner report)","https://github.com/NixOS/nixos-hardware/blob/master/lenovo/thinkpad/p14s/amd/gen2/default.nix",
+   "Code comment: \u201cFor suspending to RAM, set Config -> Power -> Sleep State to \u2018Linux\u2019 in EFI.\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
