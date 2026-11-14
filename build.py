@@ -211,6 +211,23 @@ dict(slug="dell-latitude-7350-detachable",name="Dell Latitude 7350 Detachable (I
    "README: \u201cWorking sound: camera monitor disabled, stable upstream microphone driver\u201d; CHANGES.md: with the camera package, WirePlumber \u201cstalls its event queue on the ~48 raw IPU6 camera nodes\u2026 so there is no sound\u201d; known issues list Chromium display artifacts (\u201cThe issue remains unresolved\u201d) and an infrared camera running on an experimental driver. (excerpts)"),
    ("yeutterg/omarchy-tablet on GitHub (owner's tablet repo)","https://github.com/yeutterg/omarchy-tablet",
    "Generic tablet layer for Omarchy: on-screen keyboard that pops up when the cover is detached, Stay Awake with the cover closed, lock-screen PIN pad, touch move/resize of windows, and screen rotation from the accelerometer. (summary)")]),
+dict(slug="macbook-air-m3",name="Apple MacBook Air (M3, 2024)",distro="Omarchy 4.5 (native Apple Silicon; one owner used 4.5 RC3)",overall="Works (minor fixes)",
+  wifi=U,suspend="Mixed (one owner: unreliable and power-hungry; another got reliable sleep after his own fixes)",camera=U,audio=U,display="Works on the built-in screen; external USB-C monitor not working for two owners; brightness keys broken on one stock install",battery="Mixed (higher drain during sleep than macOS for one owner; no runtime figures given)",
+  summary="Omarchy 4.5 added native support for M-series MacBooks, and several M3 MacBook Air owners posted about it on X in early November 2026. Installs went smoothly for most of them: one owner says it \u201cwent really smoothly,\u201d another says it runs well and the Mesa graphics driver works, though it lacks the polish of macOS. The two problems that came up more than once are external monitors and sleep. Two owners could not get an external monitor working over USB-C, and one owner on the 4.5 RC3 pre-release found sleep unreliable, sometimes not kicking in at all, and draining more power than macOS. A different owner says he got reliable sleep, AirDrop and AirPlay working with some AI-assisted fixes (for AirPlay he rebuilt a menu-bar plugin for ARM). A fourth owner reports that on the stock install of an M3 Air (model identifier Mac15,13) the brightness keys don't work because the display driver can't find the backlight; a custom kernel build fixes it but has to be rebuilt after every kernel update. No one in these reports said how Wi-Fi, the webcam, speakers or battery runtime compare, so those are unknown. Good for a tinkerer who mainly uses the built-in screen; check external-monitor status before relying on it.",
+  reports=[("kaimi (@kaimi_local) on X, 2026-11-04","https://x.com/kaimi_local/status/2118080538627977252",
+   "\u201cInstalled Omarchy 4.5 RC3 on my M3 MacBook Air today! It worked!\u2026 Sleep/suspend mode is unreliable, consumes much more power than on macOS, and sometimes doesn\u2019t kick in at all\u2026 External monitor is not working\u201d"),
+   ("Karl (@ClockerMountain) on X, 2026-11-05","https://x.com/ClockerMountain/status/2118317064767017049",
+   "\u201cAnd now I'm writing from my m3 macbook air. It went really smoothly.\u201d"),
+   ("Omer Muneer Qazi (@omermuneer) on X, 2026-11-05","https://x.com/omermuneer/status/2118437118469124236",
+   "\u201cBrightness keys don't work on the stock install (M3 Air, Mac15,13)\u2026 Your custom build fixes it, but it has to be rebuilt after every kernel update.\u201d (excerpt)"),
+   ("john omar (@johnomarkid) on X, 2026-11-07","https://x.com/johnomarkid/status/2118860424376652136",
+   "\u201cI got Omarchy running on my M3 Macbook Air. Everything is working except connecting to my external Dell monitor via the usb-c port.\u201d"),
+   ("SC (@sierracharlie24) on X, 2026-11-07","https://x.com/sierracharlie24/status/2118881484711100681",
+   "\u201cAirplay installed in the menu bar but didn't work. AI rebuilt Doubletake from x86 to arm\u2026 Now I can airplay to other macs and apple tv's\u201d (excerpt)"),
+   ("SC (@sierracharlie24) on X, 2026-11-08","https://x.com/sierracharlie24/status/2119488566585860455",
+   "\u201cI can confirm Omarchy running smoothly an M3 MacBook Air. And with some AI we have reliable sleep, airdrop, and airplay working.\u201d"),
+   ("RGW (@RGWorldz) on X, 2026-11-09","https://x.com/RGWorldz/status/2119744344198705609",
+   "\u201cOmarchy runs well on the Macbook Air M3, Mesa driver works, though it still lacks the polish and fluidity of MacOS.\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
