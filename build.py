@@ -270,6 +270,23 @@ dict(slug="framework-laptop-12",name="Framework Laptop 12 (13th Gen Intel, 2-in-
    "Says he uses his \u201cFramework 12 running Omarchy\u201d alongside his other devices day to day (paraphrase)"),
    ("Gimbal add-on (third-party, context)","https://github.com/mechanicsunlocked/gimbal",
    "Third-party Omarchy plugin: \u201cTurns a Framework Laptop 12 into a real tablet on Omarchy\u201d with rotation, an on-screen keyboard and a lock-screen keypad. Not part of Omarchy itself.")]),
+dict(slug="lenovo-thinkpad-e14",name="Lenovo ThinkPad E14 (Gen 3 and Gen 6 reports)",distro="Omarchy (version not stated by most owners)",overall="Works (fingerprint varies by sensor)",
+  wifi=U,suspend=U,camera=U,audio=U,display=U,battery=U,
+  summary="Owners of Lenovo's budget ThinkPad E14 report Omarchy installs quickly and runs well. Two Reddit users with the E14 Gen 6 say it works great or very good, and an E14 Gen 3 owner on X says the install took 31 seconds. The main thing that varies is the fingerprint reader. One E14 owner on Reddit (generation not stated) says the sensor, which he never got working on GNOME, worked out of the box on Omarchy, and Omarchy's changelog lists added support for the E14 Gen 6 sensor. But an open Omarchy bug report says the ELAN 04f3:0c4b reader used in E14/E15 Gen 3 and Gen 4 machines enrolls fine and then never matches with the stock driver; the reporter (on an E15 Gen 3) fixed it by switching to Lenovo's proprietary libfprint-tod driver from the AUR. Another E14 owner on X simply uses a USB fingerprint reader for sudo and 1Password. Wi-Fi, sleep, webcam, audio, display and battery weren't covered in these reports, so they are unknown.",
+  reports=[("u/Livid-Resolve-7580 on r/omarchy, 2026-02-06","https://www.reddit.com/r/omarchy/comments/1qxj4fo/linux_laptop_omarchy_suggestions/",
+   "\u201cI currently have a ThinkPad E14 gen 6 running it. It works great for me so far.\u201d"),
+   ("u/vicious425 on r/omarchy, 2026-02-06 (same thread)","https://www.reddit.com/r/omarchy/comments/1qxj4fo/linux_laptop_omarchy_suggestions/",
+   "\u201cthinkpad e14 gen6 works very good for me\u201d"),
+   ("Rubar Mohammad (@rubar_mohammad) on X, 2026-11-13","https://x.com/rubar_mohammad/status/2121220062816211415",
+   "\u201cIt took 31s for me. On a thinkpad E14 gen3\u201d (about the Omarchy install; excerpt)"),
+   ("r/omarchy post, about September 2026 (Reddit shows \u201c2mo ago\u201d; generation not stated)","https://www.reddit.com/r/omarchy/comments/1wq2pim/omarchy_reminded_me_my_thinkpad_has_a_fingerprint/",
+   "\u201cWhen I first bought this ThinkPad E14, I tried to get the fingerprint sensor working but couldn't\u2026 I installed Omarchy a week ago\u2026 the fingerprint sensor just worked out of the box.\u201d (excerpt)"),
+   ("smellman (@smellman) on X, 2026-10-26","https://x.com/smellman/status/2114652172990496883",
+   "Japanese post: with Omarchy on a ThinkPad E14 and a USB fingerprint device, he got fingerprint login working for 1Password and sudo (translation; he used an external USB reader, not the built-in one)"),
+   ("jcperdomoybarra on omacom/omarchy GitHub issue #7483, 2026-08-19 (context)","https://github.com/omacom/omarchy/issues/7483",
+   "Open issue \u201cELAN 04f3:0c4b fingerprint reader never matches under stock libfprint (ThinkPad E14/E15 Gen 3/4)\u201d: enrollment completes but verify \u201cNEVER matches\u201d; switching to Lenovo's proprietary libfprint-tod driver gave \u201c10/10 fprintd-verify passes\u201d. Reporter's machine: ThinkPad E15 Gen 3 (AMD), Omarchy 4.0.0 (excerpt)"),
+   ("Omarchy v3.1.0 release notes, via Omarchy News (context)","https://omarchynews.com/posts/96-v310",
+   "Changelog line: \u201cAdd support for Thinkpad E14 Gen 6 fingerprint sensor\u201d")]),
 ]
 COLS=[("wifi","Wi-Fi"),("suspend","Suspend"),("camera","Camera"),("audio","Audio"),("display","Display"),("battery","Battery")]
 CSS="""*{box-sizing:border-box}body{font:16px/1.5 system-ui,sans-serif;margin:0;color:#1a1a1a;background:#fafafa}
